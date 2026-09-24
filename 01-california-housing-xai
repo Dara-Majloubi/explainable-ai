@@ -1,0 +1,75 @@
+# California Housing — Explainable AI
+
+An Explainable AI project using an XGBoost regression model and multiple model explanation techniques.
+
+## Overview
+
+This project explains the behavior of an XGBoost regression model trained on the California Housing dataset from `scikit-learn`.
+
+The task is to predict the median house value (`MedHouseVal`) based on socio-economic and geographical features.
+
+## Model
+
+The project uses an **XGBoost Regressor**, a tree-based gradient boosting model capable of capturing non-linear relationships and feature interactions.
+
+## Explainability Methods
+
+### 1. Permutation Feature Importance
+
+Permutation Feature Importance is used to identify which input features have the greatest influence on the model at a global level.
+
+### 2. SHAP
+
+SHAP (SHapley Additive exPlanations) is used for:
+
+- Global feature importance
+- Local explanations of individual predictions
+- Understanding the direction of feature contributions
+
+### 3. PDP + ICE
+
+Partial Dependence Plots (PDP) are used to analyze average marginal effects.
+
+Individual Conditional Expectation (ICE) plots show how these effects vary across individual observations.
+
+These methods help identify non-linear relationships and heterogeneous model behavior.
+
+### 4. Counterfactual Explanations — DiCE
+
+DiCE is used to generate counterfactual explanations showing how feature values could change to obtain different model predictions.
+
+The project also considers the practical limitations and realism of generated counterfactuals.
+
+## Key Findings
+
+The analysis shows that geographical features such as Latitude and Longitude, together with median income (`MedInc`), have a strong influence on the model predictions.
+
+SHAP provides both global and local explanations, while PDP and ICE reveal non-linear and region-dependent effects.
+
+Counterfactual explanations demonstrate how changes in input features can affect predictions, while also highlighting potential feasibility limitations.
+
+## Dataset
+
+The project uses the **California Housing dataset** provided by `scikit-learn`.
+
+The dataset contains numerical socio-economic and geographical characteristics of California districts.
+
+**Target variable:**
+
+`MedHouseVal` — median house value.
+
+## Technologies
+
+- Python
+- NumPy
+- pandas
+- scikit-learn
+- XGBoost
+- SHAP
+- DiCE
+- Matplotlib
+- Jupyter Notebook
+
+## Academic Context
+
+Developed as part of the Master's program in Artificial Intelligence at Johannes Kepler University Linz (JKU).
